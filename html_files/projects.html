@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Kagoma</title>
+  <link rel="shortcut icon" href="./Images/PXL_20250126_112111717.PORTRAIT~2 (1).jpg" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#6c63ff;
+      --secondary:#ffb703;
+      --dark:#0a0a0f;
+      --card:#141421;
+      --text:#eaeaea;
+      --muted:#b5b5b5;
+      --border:#1f1f2e;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--dark);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit;}
+
+    /* HEADER */
+    header{
+      position:fixed;
+      width:100%;
+      top:0;left:0;
+      background:rgba(10,10,15,0.8);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+    nav{
+      max-width:1200px;
+      margin:auto;
+      padding:1.2rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    nav h1{color:var(--secondary);font-weight:800;}
+    nav ul{
+      display:flex;
+      gap:2rem;
+      list-style:none;
+    }
+    nav ul li a:hover{color:var(--secondary);}
+
+    /* HERO */
+    .hero{
+      padding:10rem 2rem 4rem;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
+    .hero h2{
+      font-size:3rem;
+      font-weight:800;
+    }
+    .hero span{color:var(--primary);}
+    .hero p{
+      max-width:750px;
+      margin:1rem auto 0;
+      color:var(--muted);
+    }
+
+    /* FILTERS */
+    .filters{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      margin:3rem 0 2rem;
+      flex-wrap:wrap;
+    }
+    .filter-btn{
+      padding:.6rem 1.4rem;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      transition:.3s;
+      font-size:.9rem;
+    }
+    .filter-btn.active,
+    .filter-btn:hover{
+      background:var(--primary);
+      border-color:var(--primary);
+    }
+
+    /* PROJECTS GRID */
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:0 2rem 6rem;
+    }
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .project{
+      background:var(--card);
+      border-radius:20px;
+      overflow:hidden;
+      transition:.4s;
+      display:flex;
+      flex-direction:column;
+    }
+    .project:hover{transform:translateY(-10px);}
+    .project-img{
+      height:180px;
+      background:linear-gradient(135deg,var(--primary),#4b44c7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+    .project-content{
+      padding:1.8rem;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .project-content h4{
+      margin-bottom:.6rem;
+      color:var(--secondary);
+    }
+    .project-content p{
+      color:var(--muted);
+      font-size:.95rem;
+      margin-bottom:1.2rem;
+      flex:1;
+    }
+    .tags{
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      margin-bottom:1.2rem;
+    }
+    .tag{
+      font-size:.7rem;
+      padding:.25rem .7rem;
+      border-radius:20px;
+      background:#1f1f2e;
+    }
+    .project-links{
+      display:flex;
+      gap:1rem;
+    }
+    .project-links a{
+      font-size:.85rem;
+      padding:.45rem 1rem;
+      border-radius:20px;
+      border:1px solid var(--border);
+      transition:.3s;
+    }
+      .active{
+        color: #ffb703;
+    }
+    .project-links a:hover{background:var(--secondary);color:#000;}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--border);
+      padding:3rem 2rem;
+      text-align:center;
+      color:#999;
+    }
+
+    @media(max-width:768px){
+      .hero h2{font-size:2.2rem;}
+      nav ul{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>KAGOMA</h1>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#" class="active">Projects</a></li>
+      <li><a href="./films.html">Films</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>My <span>Projects</span></h2>
+  <p>A collection of software projects I’ve built — frontend, backend and full-stack solutions.</p>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="frontend">Frontend</button>
+  <button class="filter-btn" data-filter="backend">Backend</button>
+  <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+  <button class="filter-btn" data-filter="film">Film Production</button>
+</div>
+
+<section>
+  <div class="projects">
+
+    <!-- SOFTWARE PROJECTS -->
+    <div class="project" data-category="frontend">
+      <div class="project-img">Frontend</div>
+      <div class="project-content">
+        <h4>Portfolio Website</h4>
+        <p>Personal portfolio built with HTML, CSS and JavaScript featuring animations and responsive design.</p>
+        <div class="tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Live Demo</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project" data-category="backend">
+      <div class="project-img">Backend</div>
+      <div class="project-content">
+        <h4>REST API System</h4>
+        <p>Secure backend API with authentication, database integration and role-based access.</p>
+        <div class="tags">
+          <span class="tag">Node.js</span><span class="tag">API</span><span class="tag">Database</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Docs</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project" data-category="fullstack">
+      <div class="project-img">Full Stack</div>
+      <div class="project-content">
+        <h4>E-Commerce Platform</h4>
+        <p>Complete online shopping system with admin control, product management and payments.</p>
+        <div class="tags">
+          <span class="tag">Frontend</span><span class="tag">Backend</span><span class="tag">Auth</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Live Demo</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILM PROJECTS -->
+    <div class="project" data-category="film">
+      <div class="project-img">Film</div>
+      <div class="project-content">
+        <h4>Short Film Production</h4>
+        <p>Written, directed and produced a short film focusing on real-life social themes.</p>
+        <div class="tags">
+          <span class="tag">Screenwriting</span><span class="tag">Directing</span><span class="tag">Producing</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Watch Trailer</a>
+          <a href="#">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project" data-category="film">
+      <div class="project-img">Film</div>
+      <div class="project-content">
+        <h4>Feature Film Development</h4>
+        <p>Feature film project developed under Kagoma Entertainment from script to production planning.</p>
+        <div class="tags">
+          <span class="tag">Script</span><span class="tag">Production</span><span class="tag">Leadership</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Synopsis</a>
+          <a href="#">Production Info</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Kagoma — Software Projects Portfolio - Designed By Kagoma Kevin 🦅</p>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const projects = document.querySelectorAll('.project');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      projects.forEach(project => {
+        project.style.display = (filter === 'all' || project.dataset.category === filter)
+          ? 'flex'
+          : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

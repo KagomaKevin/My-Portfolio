@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kagoma Entertainment</title>
+  <link rel="shortcut icon" href="./Images/PXL_20250126_112111717.PORTRAIT~2 (1).jpg" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#6c63ff;
+      --secondary:#ffb703;
+      --dark:#0a0a0f;
+      --card:#141421;
+      --text:#eaeaea;
+      --muted:#b5b5b5;
+      --border:#1f1f2e;
+      --success:#2ecc71;
+      --error:#ff4d4d;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--dark);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit;}
+
+    /* HEADER */
+    header{
+      position:fixed;
+      width:100%;
+      top:0;left:0;
+      background:rgba(10,10,15,0.85);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+    nav{
+      max-width:1200px;
+      margin:auto;
+      padding:1.2rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    nav h1{color:var(--secondary);font-weight:800;}
+    nav ul{display:flex;gap:2rem;list-style:none;}
+    nav ul li a:hover{color:var(--secondary);}
+
+    /* HERO */
+    .hero{
+      padding:10rem 2rem 3rem;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
+    .hero h2{font-size:3rem;font-weight:800;}
+    .hero span{color:var(--primary);}
+    .hero p{max-width:800px;margin:1rem auto;color:var(--muted);}
+
+    /* CONTACT SECTION */
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:2rem 2rem 6rem;
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3rem;
+    }
+
+    /* INFO */
+    .contact-info{
+      background:var(--card);
+      padding:2.5rem;
+      border-radius:25px;
+    }
+    .contact-info h3{color:var(--secondary);margin-bottom:1.2rem;}
+    .info-item{margin-bottom:1.4rem;}
+    .info-item span{color:var(--muted);display:block;font-size:.9rem;}
+
+    /* FORM */
+    form{
+      background:var(--card);
+      padding:2.5rem;
+      border-radius:25px;
+    }
+    form h3{color:var(--secondary);margin-bottom:1.2rem;}
+    .form-group{margin-bottom:1.2rem;}
+    input, textarea{
+      width:100%;
+      padding:.9rem 1rem;
+      background:#0f0f1a;
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--text);
+      font-family:'Poppins',sans-serif;
+      outline:none;
+    }
+    textarea{resize:none;height:140px;}
+    input:focus, textarea:focus{border-color:var(--primary);}
+
+    .error{color:var(--error);font-size:.8rem;margin-top:.3rem;display:none;}
+
+    button{
+      margin-top:1rem;
+      padding:.8rem 2rem;
+      border:none;
+      border-radius:30px;
+      background:var(--primary);
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+    }
+    button:hover{opacity:.85;}
+
+    .success-msg{
+      display:none;
+      margin-top:1rem;
+      color:var(--success);
+      font-weight:500;
+    }
+      .active{
+        color: #ffb703;
+    }
+    /* SOCIALS */
+    .socials{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;}
+    .socials a{
+      padding:.6rem 1.2rem;
+      border-radius:20px;
+      background:#1f1f2e;
+      font-size:.85rem;
+      transition:.3s;
+    }
+    .socials a:hover{background:var(--primary);}
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:3rem 2rem;
+      text-align:center;
+      color:#999;
+    }
+
+    @media(max-width:900px){
+      .contact-grid{grid-template-columns:1fr;}
+      .hero h2{font-size:2.2rem;}
+      nav ul{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>KAGOMA</h1>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="films.html">Films</a></li>
+      <li><a href="#" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Get in <span>Touch</span></h2>
+  <p>Let’s collaborate on software development, film production, or creative projects. I’m open to opportunities, partnerships, and ideas.</p>
+</div>
+
+<section>
+  <div class="contact-grid">
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <div class="info-item">
+        <strong>Name</strong>
+        <span>Founder & CEO – Kagoma Entertainment</span>
+      </div>
+      <div class="info-item">
+        <strong>Email</strong>
+        <span>kagomaentertainment@gmail.com</span>
+      </div>
+      <div class="info-item">
+        <strong>Phone</strong>
+        <span>+250 780 094 116</span>
+      </div>
+      <div class="info-item">
+        <strong>Location</strong>
+        <span>Rwanda</span>
+      </div>
+
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">GitHub</a>
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="contactForm">
+      <h3>Send a Message</h3>
+
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name" />
+        <div class="error" id="nameError">Please enter your name</div>
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Your Email" />
+        <div class="error" id="emailError">Please enter a valid email</div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="subject" placeholder="Subject" />
+        <div class="error" id="subjectError">Please enter a subject</div>
+      </div>
+
+      <div class="form-group">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <div class="error" id="messageError">Please enter your message</div>
+      </div>
+
+      <button type="submit">Send Message</button>
+      <div class="success-msg" id="successMsg">Message sent successfully! I’ll get back to you soon.</div>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Kagoma Entertainment — Designed By Kagoma Kevin 🦅</p>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let valid = true;
+
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const subject = document.getElementById('subject');
+    const message = document.getElementById('message');
+
+    // Reset errors
+    document.querySelectorAll('.error').forEach(err => err.style.display = 'none');
+
+    if(name.value.trim() === ''){
+      document.getElementById('nameError').style.display = 'block';
+      valid = false;
+    }
+
+    if(!email.value.includes('@')){
+      document.getElementById('emailError').style.display = 'block';
+      valid = false;
+    }
+
+    if(subject.value.trim() === ''){
+      document.getElementById('subjectError').style.display = 'block';
+      valid = false;
+    }
+
+    if(message.value.trim() === ''){
+      document.getElementById('messageError').style.display = 'block';
+      valid = false;
+    }
+
+    if(valid){
+      document.getElementById('successMsg').style.display = 'block';
+      form.reset();
+    }
+  });
+</script>
+
+</body>
+</html>

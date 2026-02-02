@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Films | Kagoma Entertainment</title>
+  <link rel="shortcut icon" href="./Images/PXL_20250126_112111717.PORTRAIT~2 (1).jpg" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#6c63ff;
+      --secondary:#ffb703;
+      --dark:#0a0a0f;
+      --card:#141421;
+      --text:#eaeaea;
+      --muted:#b5b5b5;
+      --border:#1f1f2e;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--dark);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit;}
+
+    /* HEADER */
+    header{
+      position:fixed;
+      width:100%;
+      top:0;left:0;
+      background:rgba(10,10,15,0.8);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+    nav{
+      max-width:1200px;
+      margin:auto;
+      padding:1.2rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    nav h1{color:var(--secondary);font-weight:800;}
+    nav ul{display:flex;gap:2rem;list-style:none;}
+    nav ul li a:hover{color:var(--secondary);}
+
+    /* HERO */
+    .hero{
+      padding:10rem 2rem 4rem;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
+    .hero h2{font-size:3rem;font-weight:800;}
+    .hero span{color:var(--primary);}
+    .hero p{max-width:800px;margin:1rem auto;color:var(--muted);}
+
+    /* FILTERS */
+    .filters{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin:2.5rem 0 1.5rem;
+    }
+    .filter-btn{
+      padding:.6rem 1.4rem;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      transition:.3s;
+      font-size:.9rem;
+    }
+    .filter-btn.active,.filter-btn:hover{background:var(--primary);border-color:var(--primary);}
+
+    /* FILMS GRID */
+    section{max-width:1200px;margin:auto;padding:0 2rem 6rem;}
+    .films{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .film{
+      background:var(--card);
+      border-radius:22px;
+      overflow:hidden;
+      transition:.4s;
+      cursor:pointer;
+    }
+    .film:hover{transform:translateY(-10px);}
+    .film-poster{
+      height:220px;
+      background:linear-gradient(135deg,#000,var(--primary));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+    .film-content{padding:1.6rem;}
+    .film-content h4{color:var(--secondary);margin-bottom:.5rem;}
+    .film-content p{color:var(--muted);font-size:.95rem;margin-bottom:1rem;}
+    .roles{display:flex;gap:.6rem;flex-wrap:wrap;}
+    .role{font-size:.7rem;padding:.25rem .7rem;border-radius:20px;background:#1f1f2e;}
+
+    /* MODAL */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.7);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+    }
+    .modal.active{display:flex;}
+    .modal-box{
+      background:var(--card);
+      max-width:600px;
+      width:90%;
+      padding:2.5rem;
+      border-radius:25px;
+      position:relative;
+      animation:pop .4s ease;
+    }
+    @keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+    .close{
+      position:absolute;
+      top:15px;right:20px;
+      font-size:1.5rem;
+      cursor:pointer;
+    }
+      .active{
+        color: #ffb703;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:3rem 2rem;
+      text-align:center;
+      color:#999;
+    }
+
+    @media(max-width:768px){
+      .hero h2{font-size:2.2rem;}
+      nav ul{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>KAGOMA</h1>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#" class="active">Films</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Film <span>Production</span></h2>
+  <p>Films I have written, directed and produced under Kagoma Entertainment — telling powerful African stories.</p>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="short">Short Films</button>
+  <button class="filter-btn" data-filter="feature">Feature Films</button>
+  <button class="filter-btn" data-filter="documentary">Documentaries</button>
+</div>
+
+<section>
+  <div class="films">
+
+    <div class="film" data-category="short" data-title="Broken Silence" data-desc="A short film addressing social injustice and silence in communities." data-roles="Screenwriter, Director, Producer">
+      <div class="film-poster">SHORT FILM</div>
+      <div class="film-content">
+        <h4>Nowadays Films</h4>
+        <p>Social drama short film.</p>
+        <div class="roles"><span class="role">Writer</span><span class="role">Director</span><span class="role">Producer</span></div>
+      </div>
+    </div>
+
+    <div class="film" data-category="feature" data-title="The Long Road" data-desc="A feature film project exploring ambition, struggle and destiny." data-roles="Producer, Director">
+      <div class="film-poster">FEATURE FILM</div>
+      <div class="film-content">
+        <h4>The Long Road</h4>
+        <p>Feature film in development.</p>
+        <div class="roles"><span class="role">Director</span><span class="role">Producer</span></div>
+      </div>
+    </div>
+
+    <div class="film" data-category="documentary" data-title="Voices of Youth" data-desc="A documentary highlighting youth creativity and challenges." data-roles="Director, Producer">
+      <div class="film-poster">DOCUMENTARY</div>
+      <div class="film-content">
+        <h4>Voices of Youth</h4>
+        <p>Inspirational documentary.</p>
+        <div class="roles"><span class="role">Director</span><span class="role">Producer</span></div>
+      </div>
+    </div>
+     <div class="film" data-category="short" data-title="Broken Silence" data-desc="A short film addressing social injustice and silence in communities." data-roles="Screenwriter, Director, Producer">
+      <div class="film-poster">SHORT FILM</div>
+      <div class="film-content">
+        <h4>Umutima Ukomeye</h4>
+        <p>Social drama short film.</p>
+        <div class="roles"><span class="role">Writer</span><span class="role">Director</span><span class="role">Producer</span></div>
+      </div>
+    </div>
+
+    <div class="film" data-category="feature" data-title="The Long Road" data-desc="A feature film project exploring ambition, struggle and destiny." data-roles="Producer, Director">
+      <div class="film-poster">FEATURE FILM</div>
+      <div class="film-content">
+        <h4>The Long Road</h4>
+        <p>Feature film in development.</p>
+        <div class="roles"><span class="role">Director</span><span class="role">Producer</span></div>
+      </div>
+    </div>
+
+    <div class="film" data-category="documentary" data-title="Voices of Youth" data-desc="A documentary highlighting youth creativity and challenges." data-roles="Director, Producer">
+      <div class="film-poster">DOCUMENTARY</div>
+      <div class="film-content">
+        <h4>Golden Heart</h4>
+        <p>Inspirational documentary.</p>
+        <div class="roles"><span class="role">Director</span><span class="role">Producer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc" style="margin:1rem 0;color:var(--muted)"></p>
+    <p><strong>Roles:</strong> <span id="modalRoles"></span></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Kagoma Entertainment — Film Production - Designed By Kagoma Kevin 🦅</p>
+</footer>
+
+<script>
+  // Filter films
+  const fBtns = document.querySelectorAll('.filter-btn');
+  const films = document.querySelectorAll('.film');
+
+  fBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      fBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      films.forEach(film => {
+        film.style.display = (filter === 'all' || film.dataset.category === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Modal
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalRoles = document.getElementById('modalRoles');
+
+  films.forEach(film => {
+    film.addEventListener('click', () => {
+      modalTitle.textContent = film.dataset.title;
+      modalDesc.textContent = film.dataset.desc;
+      modalRoles.textContent = film.dataset.roles;
+      modal.classList.add('active');
+    });
+  });
+
+  function closeModal(){modal.classList.remove('active');}
+</script>
+
+</body>
+</html>
